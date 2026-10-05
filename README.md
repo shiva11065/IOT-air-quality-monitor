@@ -35,7 +35,7 @@ A low-cost IoT system that measures air quality, temperature and humidity in rea
 MQ135, temperature and humidity readings were displayed in real time, locally on the OLED and remotely on the cloud dashboard.
 
 ## Circuit Diagram
-(keep your existing image here)
+![Screenshot 2025-05-04 202434](https://github.com/user-attachments/assets/2ccef39a-fb74-4f72-964e-65003fa33cc9
 
 ## Future Improvements
 - Add a PM2.5 sensor
