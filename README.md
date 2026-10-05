@@ -1,55 +1,43 @@
-# IOT-air-quality-monitor
+# IoT Air Quality Monitor
 
-##  Project Overview 
-This project is an IoT -based air quality monitoring system designed to measure environmental parameters such as CO₂, particles (PM2.5), temperature and humidity. The system uses sensors connected to ESP8266 / ESP32 microcontroller and download real -time data on a cloud platform such as Thingpeak, Blynk or Firebase, allowing users to monitor air quality remotely via web or mobile control panel.
-The goal is to provide an affordable and accessible vehicle to follow the quality of the indoor air, school or public places and raise awareness about environmental health.
+A low-cost IoT system that measures air quality, temperature and humidity in real time and sends the data to the cloud for remote monitoring.
 
-## Components & Applications Used
-Hardware Components
-NodeMCU (ESP8266) or ESP32 Wi-Fi microcontroller
+## Features
+- Air quality (gas) sensing with MQ135
+- Temperature and humidity with [DHT11 / DHT22]
+- Live data on a [ThingSpeak / Blynk] dashboard
+- Local display on OLED [remove if not used]
 
-MQ135 Gas Sensor (for detecting air quality index/CO₂)
+## Hardware
+- [ESP8266 NodeMCU / ESP32]
+- MQ135 gas sensor
+- [DHT11 / DHT22]
+- OLED display (I2C) [if used]
+- Breadboard, jumper wires, USB power
 
-DHT11 / DHT22 sensor (for temperature and humidity)
+## Software
+- Arduino IDE (C/C++)
+- Libraries: WiFi, DHT, Adafruit_Sensor, ThingSpeak, Wire
 
-OLED Display (optional for local display)
+## How It Works
+1. Sensors read air quality, temperature and humidity.
+2. The microcontroller processes the readings.
+3. Data is sent over Wi-Fi to [ThingSpeak/Blynk].
+4. It is viewed live on the dashboard and OLED.
 
-Breadboard, jumper wires, resistors
+## Setup
+1. Wire the circuit as shown in the diagram below.
+2. Install the libraries via Sketch → Include Library → Manage Libraries.
+3. Add your Wi-Fi name and cloud API key in the code.
+4. Upload to the board and open the dashboard.
 
-Power Supply (USB or external)
+## Results
+MQ135, temperature and humidity readings were displayed in real time, locally on the OLED and remotely on the cloud dashboard.
 
-📱 Software / Apps
-Arduino IDE – for writing and uploading the firmware
+## Circuit Diagram
+(keep your existing image here)
 
-ThingSpeak or Blynk IoT App – for real-time data visualization
-
-IFTTT / Telegram Bot (optional) – for alerts when pollution exceeds safe levels
-
-Google Sheets / Firebase (optional) – for cloud data logging
-
-##  Libraries Used for Compiling Code
-Make sure to install the following libraries in the Arduino IDE:
-
-ESP8266WiFi.h or WiFi.h – for Wi-Fi connection
-
-Adafruit_Sensor.h
-
-DHT.h – to read DHT11/DHT22 sensor
-
-ThingSpeak.h – to send data to the ThingSpeak cloud
-
-Wire.h – for I2C communication (OLED or additional sensors)
-
-To install libraries: Go to Sketch → Include Library → Manage Libraries and search for each one.
-
-## Project OutcomeThe quality of the air is successfully measured (MQ135), temperature and humidity in real time
-
-
-displayed data both local (through OLED) and remote (via the cloud control panel)
-
-## Conclusion
-The IoT air quality monitoring project shows how integrated systems and IoT can be used to follow the environmental health. By integrating affordable cloud sensors, this system makes air quality data access and meaningful. It can be expanded to include automation (for example, activating fans or filters) or automatically learning to analyze predictions in smart city applications.
-## Circuit Diagram & Simulation 
-![Screenshot 2025-05-04 202434](https://github.com/user-attachments/assets/2ccef39a-fb74-4f72-964e-65003fa33cc9)
-
-
+## Future Improvements
+- Add a PM2.5 sensor
+- Automatic fan/filter control
+- Alerts via Telegram when air quality is poor
